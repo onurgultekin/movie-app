@@ -79,8 +79,8 @@
           "
         >
           <li>
-            <a
-              href="#"
+            <nuxt-link
+              to="/"
               class="
                 block
                 py-2
@@ -93,12 +93,12 @@
                 dark:text-white
               "
               aria-current="page"
-              >Home</a
+              >Home</nuxt-link
             >
           </li>
           <li>
-            <a
-              href="#"
+            <nuxt-link
+              to="/about"
               class="
                 block
                 py-2
@@ -117,7 +117,7 @@
                 md:dark:hover:bg-transparent
                 dark:border-gray-700
               "
-              >About</a
+              >About</nuxt-link
             >
           </li>
         </ul>
