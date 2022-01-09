@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+rename .env.example file to .env at first.
+
 ```bash
 # install dependencies
 $ npm install
