@@ -1,13 +1,14 @@
 <template>
   <div>
     <p class="text-black-700 text-xl font-bold">{{ title }}</p>
-    <client-only>
-      <swiper v-if="movies" class="swiper mt-8" :options="swiperOption">
-        <swiper-slide v-for="movie in movies" :key="movie.id">
-          <MovieItem :movie="movie" />
-        </swiper-slide>
-      </swiper>
-    </client-only>
+    <div v-if="movies" class="container home-slider mt-4">
+      <VueSlickCarousel v-if="movies.length > 0" v-bind="settings">
+        <MovieItem v-for="movie in movies" :key="movie.id" :movie="movie" />
+      </VueSlickCarousel>
+      <div v-else class="text-white px-4 py-4 text-center">
+        {{ title }} are loading...
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,13 +17,43 @@ export default {
   name: "Movies",
   data() {
     return {
-      swiperOption: {
-        slidesPerView: 4,
-        spaceBetween: 10,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+      settings: {
+        dots: true,
+        arrows: false,
+        focusOnSelect: true,
+        infinite: true,
+        speed: 1500,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        touchThreshold: 7,
+        pauseOnDotsHover: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+            },
+          },
+        ],
       },
     };
   },
@@ -40,14 +71,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.swiper {
-  min-height: 300px;
-  display: flex;
-  overflow: hidden;
-  .swiper-pagination {
-    > .swiper-pagination-bullet {
-      background-color: red;
-    }
-  }
-}
 </style>

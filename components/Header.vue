@@ -13,7 +13,7 @@
     "
   >
     <div class="container flex flex-wrap justify-between items-center mx-auto">
-      <a href="#" class="flex">
+      <nuxt-link to="/" class="flex">
         <img src="@/assets/images/movie_logo.png" alt="Logo" width="52" />
         <span
           class="
@@ -25,7 +25,7 @@
           "
           >Movie App</span
         >
-      </a>
+      </nuxt-link>
       <button
         data-collapse-toggle="mobile-menu"
         type="button"

@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'movie-app',
+    title: 'Movie App',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -14,13 +14,33 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: '~/assets/css/slider.css' },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/axios.js' },
-    { src: '@/plugins/swiper.js', mode: 'client' }
+    { src: '@/plugins/slick-carousel.js' }
   ],
+  ssr: false,
+
+  loadingIndicator: {
+    name: 'circle',
+    color: '#3B8070',
+    background: 'white'
+  },
+
+  pageTransition: {
+    name: 'my-page',
+    mode: 'out-in'
+  },
+
+  router: {
+    linkActiveClass: 'active',
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 };
+    }
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
