@@ -40,7 +40,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "About Page",
+  head() {
+    return {
+      title: "About Page",
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>

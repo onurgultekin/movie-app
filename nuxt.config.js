@@ -22,7 +22,6 @@ export default {
     { src: '~/plugins/axios.js' },
     { src: '@/plugins/slick-carousel.js' }
   ],
-  ssr: false,
 
   loadingIndicator: {
     name: 'circle',

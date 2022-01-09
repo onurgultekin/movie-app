@@ -32,6 +32,13 @@ export default {
     this.getMovieDetails(this.$route.params.id);
     this.getMovieCredits(this.$route.params.id);
   },
+  head() {
+    return {
+      title: this.details
+        ? this.details.title + " details"
+        : "Movie Detail Page",
+    };
+  },
 };
 </script>
 
