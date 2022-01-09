@@ -20,6 +20,6 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 
-I did not need to use Vuex Store for this project. Because props was enought to implement this one.
+I did not need to use Vuex Store for this project. Because props was enough to implement this one.
 
 You can see live version of the project at https://nuxtjs-movie-app-onur-gultekin.herokuapp.com/
